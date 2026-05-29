@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabor em Casa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #fafaf8; color: #1a1a18; font-family: 'Lato', sans-serif; }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 18px 24px;
+      background: #fff;
+      border-bottom: 1px solid #e8e6e0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav a {
+      font-size: 14px;
+      color: #888;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav a:hover { color: #b5461b; }
+
+    .hero {
+      background: linear-gradient(135deg, #b5461b 0%, #e07840 100%);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #fff;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .hero p { font-weight: 300; font-size: 18px; color: rgba(255,255,255,0.85); }
+
+    .section { padding: 48px 24px; max-width: 800px; margin: 0 auto; }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #1a1a18;
+      margin-bottom: 24px;
+      border-left: 4px solid #e07840;
+      padding-left: 12px;
+    }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .card { background: #fff; border: 1px solid #e8e6e0; border-radius: 12px; overflow: hidden; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card-img { width: 100%; height: 120px; display: flex; align-items: center; justify-content: center; font-size: 48px; background: #f5f3ef; }
+    .card-body { padding: 14px; }
+    .card-body h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: #1a1a18; margin-bottom: 4px; }
+    .card-body p { font-size: 13px; color: #777; line-height: 1.6; }
+    .tag { display: inline-block; font-size: 11px; background: #fce8de; color: #993c1d; padding: 2px 8px; border-radius: 20px; margin-top: 8px; }
+
+    .dica { background: #f5f3ef; border-radius: 12px; padding: 20px 24px; font-size: 15px; color: #1a1a18; line-height: 1.8; border-left: 4px solid #e07840; margin-bottom: 16px; }
+    .dica strong { color: #b5461b; }
+
+    footer { text-align: center; padding: 32px 24px; font-size: 13px; color: #aaa; border-top: 1px solid #e8e6e0; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a onclick="document.getElementById('receitas').scrollIntoView({behavior:'smooth'})">Receitas</a>
+    <a onclick="document.getElementById('dicas').scrollIntoView({behavior:'smooth'})">Dicas</a>
+    <a onclick="document.getElementById('categorias').scrollIntoView({behavior:'smooth'})">Categorias</a>
+  </nav>
+
+  <div class="hero">
+    <h1>🍽 Sabor em Casa</h1>
+    <p>Receitas simples, gostosas e feitas com carinho</p>
+  </div>
+
+  <div class="section" id="receitas">
+    <h2>Receitas em destaque</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-img">🍝</div>
+        <div class="card-body">
+          <h3>Macarrão ao sugo</h3>
+          <p>Clássico, rápido e sempre delicioso. Pronto em 20 minutos.</p>
+          <span class="tag">20 min</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🍗</div>
+        <div class="card-body">
+          <h3>Frango assado</h3>
+          <p>Temperado com alho e limão, crocante por fora e suculento por dentro.</p>
+          <span class="tag">45 min</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🥗</div>
+        <div class="card-body">
+          <h3>Salada colorida</h3>
+          <p>Leve, nutritiva e cheia de cor. Perfeita para o almoço do dia a dia.</p>
+          <span class="tag">10 min</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🍮</div>
+        <div class="card-body">
+          <h3>Pudim de leite</h3>
+          <p>A sobremesa favorita do Brasil. Cremoso, simples e irresistível.</p>
+          <span class="tag">1h 30min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="dicas">
+    <h2>Dicas de cozinha</h2>
+    <div class="dica"><strong>🔪 Facas afiadas</strong> — Uma faca bem afiada é mais segura e facilita muito o preparo.</div>
+    <div class="dica"><strong>🧂 Sal na hora certa</strong> — Tempere a carne antes de grelhar, ajuste caldos e sopas no final.</div>
+    <div class="dica"><strong>🫙 Mise en place</strong> — Separe todos os ingredientes antes de começar.</div>
+    <div class="dica"><strong>🔥 Panela quente</strong> — Aqueça bem a frigideira antes de adicionar o óleo.</div>
+  </div>
+
+  <div class="section" id="categorias">
+    <h2>Categorias</h2>
+    <div class="cards">
+      <div class="card"><div class="card-img">🥩</div><div class="card-body"><h3>Carnes</h3><p>Grelhados, assados e ensopados.</p></div></div>
+      <div class="card"><div class="card-img">🥦</div><div class="card-body"><h3>Vegetariano</h3><p>Receitas sem carne, cheias de nutrientes.</p></div></div>
+      <div class="card"><div class="card-img">🎂</div><div class="card-body"><h3>Sobremesas</h3><p>Doces e confeitaria para adoçar o dia.</p></div></div>
+      <div class="card"><div class="card-img">🥤</div><div class="card-body"><h3>Bebidas</h3><p>Sucos, drinks e infusões refrescantes.</p></div></div>
+    </div>
+  </div>
+
+  <footer>Feito com 💛 · Sabor em Casa © 2026</footer>
+
+</body>
+</html>
